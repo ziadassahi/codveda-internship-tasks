@@ -1,1 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>نموذج تسجيل</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styel.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card" role="form">
+      <h1>نموذج تسجيل بسيط</h1>
+      <p class="lead">أدخل بياناتك وتابع ظهور الملاحظات لحظيًا. لن يتم إعادة تحميل الصفحة.</p>
+
+      <form id="signupForm" novalidate aria-describedby="formDesc">
+        <div id="formDesc" class="helper">الحقول المطلوبة: الاسم، البريد الإلكتروني، الهاتف، وكلمة المرور.</div>
+
+        <div class="grid">
+          <div class="form-row" id="row-name">
+            <label for="name">الاسم الكامل</label>
+            <input id="name" name="name" type="text" placeholder="مثال: أسين مرزي" autocomplete="name" required aria-describedby="nameError">
+            <small class="error" id="nameError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-row" id="row-email">
+            <label for="email">البريد الإلكتروني</label>
+            <input id="email" name="email" type="email" placeholder="example@mail.com" autocomplete="email" required aria-describedby="emailError">
+            <small class="error" id="emailError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-row" id="row-phone">
+            <label for="phone">رقم الهاتف</label>
+            <input id="phone" name="phone" type="tel" placeholder="مثال (مصر): 01XXXXXXXXX" inputmode="tel" autocomplete="tel" required aria-describedby="phoneError">
+            <small class="error" id="phoneError" aria-live="polite"></small>
+            <div class="helper">يدعم الصيغة المصرية 11 رقم تبدأ بـ 01، أو أرقام دولية 10–15 رقم.</div>
+          </div>
+
+          <div class="form-row" id="row-password">
+            <label for="password">كلمة المرور</label>
+            <input id="password" name="password" type="password" placeholder="••••••••" autocomplete="new-password" required aria-describedby="passwordError passwordStrength">
+            <small class="error" id="passwordError" aria-live="polite"></small>
+            <div class="strength" id="passwordStrength" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="submitBtn" type="submit">تسجيل</button>
+          <span class="note">بالضغط على تسجيل، توافق على الشروط.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">تم الإرسال بنجاح ✔️</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
